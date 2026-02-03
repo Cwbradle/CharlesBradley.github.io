@@ -1,571 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
-  <meta name="description" content="Portfolio of Your Name — projects, resume, and contact info." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Charles Bradley</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg: #0b0f17;
-      --panel: rgba(255,255,255,0.06);
-      --panel-2: rgba(255,255,255,0.10);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.70);
-      --border: rgba(255,255,255,0.16);
-      --shadow: 0 20px 60px rgba(0,0,0,0.45);
-      --radius: 18px;
-      --max: 1100px;
+    body {
+      font: 16px/1.6 system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #2b2c36;
+      color: white;
     }
 
-    *{ box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 700px at 20% 10%, rgba(255,255,255,0.08), transparent 60%),
-                  radial-gradient(900px 600px at 80% 30%, rgba(255,255,255,0.06), transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    a{ color: inherit; text-decoration: none; }
-    .container{ width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
-
-    /* Top nav */
-    .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(11,15,23,0.55);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
-    }
-    .brand{
-      display:flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .brand strong{ font-size: 16px; letter-spacing: 0.2px; }
-    .brand span{ font-size: 12px; color: var(--muted); }
-
-    .tabs{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .tab{
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      border-radius: 999px;
-      font-size: 13px;
-      color: var(--muted);
-      transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
-    }
-    .tab:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.26);
-      color: var(--text);
-    }
-    .tab.active{
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.35);
-      color: var(--text);
-    }
-
-    /* Hero */
-    header.hero{
-      padding: 34px 0 22px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-    .card{
-      border: 1px solid var(--border);
-      background: var(--panel);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .hero-photo{
-      position: relative;
-      min-height: 420px;
-      background:
-        linear-gradient(180deg, rgba(11,15,23,0.10), rgba(11,15,23,0.90)),
-        url("me.jpg");
+    header {
+      width: 100%;
+      height: 100vh;
+      background-image: url('images/background.jpg');
       background-size: cover;
       background-position: center;
-    }
-    .hero-photo::after{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(700px 400px at 30% 20%, rgba(255,255,255,0.12), transparent 55%);
-      pointer-events: none;
-    }
-    .hero-photo-inner{
-      position:absolute;
-      inset: 0;
-      display:flex;
+      display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 22px;
-      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
     }
-    .hero-title{
-      font-size: clamp(24px, 3.2vw, 40px);
+
+    header h1 {
+      margin: 0;
+      font-size: 4em;
       line-height: 1.1;
-      margin: 0;
-      letter-spacing: 0.2px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      font-family: 'Inter', sans-serif;
     }
-    .hero-sub{
-      margin: 0;
-      color: var(--muted);
-      max-width: 42ch;
+
+    header p {
+      margin: 6px 0 14px 0;
+      font-size: 1.35em;
+      font-weight: 300;
+      line-height: 1.2;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      font-family: 'Inter', sans-serif;
     }
-    .hero-cta{
-      display:flex;
-      gap: 10px;
+
+    nav {
+      margin-top: 10px;
+      display: flex;
       flex-wrap: wrap;
-      margin-top: 8px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 11px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      font-size: 13px;
-      transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.10);
-      border-color: rgba(255,255,255,0.28);
-    }
-    .btn.primary{
-      background: rgba(255,255,255,0.14);
-      border-color: rgba(255,255,255,0.35);
+      justify-content: center;
+      gap: 10px;
+      padding: 0 18px;
     }
 
-    .hero-info{
-      padding: 18px;
-      display:flex;
-      flex-direction: column;
-      gap: 14px;
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.05em;
+      padding: 8px 12px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
     }
-    .pillrow{ display:flex; gap: 8px; flex-wrap: wrap; }
-    .pill{
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
-      padding: 8px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      color: var(--muted);
+
+    nav a:hover {
+      border: 2px solid white;
+      background-color: rgba(255, 255, 255, 0.1);
     }
-    .hero-bio{
-      color: var(--muted);
+
+    main {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 40px 18px 60px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 10px;
+      padding: 18px 18px;
+      margin: 16px 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+
+    .card h2 {
+      margin: 0 0 10px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.35em;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(255,255,255,0.18);
+    }
+
+    .card p {
       margin: 0;
-    }
-    .stats{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    .stat{
-      padding: 12px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-    }
-    .stat strong{ display:block; font-size: 18px; }
-    .stat span{ color: var(--muted); font-size: 12px; }
-
-    /* Sections */
-    section{
-      padding: 18px 0;
-      scroll-margin-top: 80px; /* so anchor links don't hide under sticky nav */
-    }
-    .section-card{
-      padding: 18px;
-    }
-    h2{
-      margin: 0 0 8px;
-      font-size: 18px;
-      letter-spacing: 0.2px;
-    }
-    .lead{ margin: 0 0 14px; color: var(--muted); }
-
-    /* Projects grid */
-    .projects{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .project{
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
-      display:flex;
-      flex-direction: column;
-      gap: 10px;
-      min-height: 160px;
-    }
-    .project h3{ margin: 0; font-size: 15px; }
-    .project p{ margin: 0; color: var(--muted); font-size: 13px; }
-    .project .tags{ display:flex; gap: 8px; flex-wrap: wrap; }
-    .tag{
-      font-size: 11px;
-      padding: 6px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      color: var(--muted);
-    }
-    .project .links{ margin-top:auto; display:flex; gap: 10px; flex-wrap: wrap; }
-    .link{
-      font-size: 12px;
-      color: var(--text);
-      opacity: 0.9;
-      border-bottom: 1px dashed rgba(255,255,255,0.35);
-    }
-    .link:hover{ opacity: 1; }
-
-    /* Resume */
-    .resume-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .item{
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
-    }
-    .item .title{ display:flex; justify-content: space-between; gap: 10px; }
-    .item h3{ margin:0; font-size: 14px; }
-    .item small{ color: var(--muted); }
-    .item p{ margin: 8px 0 0; color: var(--muted); font-size: 13px; }
-
-    /* Contact */
-    .contact-grid{
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 12px;
-    }
-    .contact-list{
-      display:flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .contact-row{
-      display:flex;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
-      color: var(--muted);
-    }
-    .contact-row strong{ color: var(--text); font-weight: 600; }
-    footer{
-      padding: 22px 0 34px;
-      color: var(--muted);
-      font-size: 12px;
+      color: rgba(255,255,255,0.92);
+      font-family: 'Inter', sans-serif;
     }
 
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .hero-photo{ min-height: 360px; }
-      .projects{ grid-template-columns: 1fr; }
-      .resume-grid{ grid-template-columns: 1fr; }
-      .contact-grid{ grid-template-columns: 1fr; }
-      .tabs{ justify-content: flex-start; }
-      .stats{ grid-template-columns: repeat(3, 1fr); }
+    .card a {
+      color: #aeb3cc;
+      text-decoration: none;
+      font-weight: 600;
     }
-    @media (max-width: 420px){
-      .stats{ grid-template-columns: 1fr; }
+    .card a:hover { color: #0a66c2; }
+
+    footer {
+      text-align: center;
+      padding: 22px 10px;
+      color: rgba(255,255,255,0.75);
+      font-family: 'Inter', sans-serif;
     }
   </style>
 </head>
 
 <body>
-  <!-- Top nav -->
-  <div class="topbar">
-    <div class="container">
-      <div class="nav">
-        <div class="brand">
-          <strong>Your Name</strong>
-          <span>Role / Major / Tagline</span>
-        </div>
-
-        <nav class="tabs" aria-label="Sections">
-          <a class="tab" href="#about">About Me</a>
-          <a class="tab" href="#projects">Projects</a>
-          <a class="tab" href="#resume">Resume</a>
-          <a class="tab" href="#contact">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <header class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <!-- Big photo card -->
-        <div class="card hero-photo" role="img" aria-label="Photo of Your Name">
-          <div class="hero-photo-inner">
-            <h1 class="hero-title">Hi, I’m Your Name.</h1>
-            <p class="hero-sub">A short one-liner about what you do and what you’re aiming for.</p>
-            <div class="hero-cta">
-              <a class="btn primary" href="#projects">View Projects</a>
-              <a class="btn" href="#contact">Contact Me</a>
-              <!-- optional: link to a PDF resume file you upload to the repo -->
-              <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Info card -->
-        <div class="card hero-info">
-          <div class="pillrow">
-            <span class="pill">📍 City, State</span>
-            <span class="pill">💻 Tech / Field</span>
-            <span class="pill">🎓 School / Program</span>
-          </div>
-
-          <p class="hero-bio">
-            Write 3–5 sentences here: what you’re studying/doing, what you enjoy building,
-            and what kind of opportunities you’re looking for.
-          </p>
-
-          <div class="stats" aria-label="Highlights">
-            <div class="stat">
-              <strong>5+</strong>
-              <span>Projects Built</span>
-            </div>
-            <div class="stat">
-              <strong>2</strong>
-              <span>Internships</span>
-            </div>
-            <div class="stat">
-              <strong>10+</strong>
-              <span>Skills</span>
-            </div>
-          </div>
-
-          <div class="pillrow">
-            <a class="btn" href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn" href="mailto:you@email.com">Email</a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <header>
+    <h1>Charles Bradley</h1>
+    <p>Mechanical Engineering Student at California Polytechnic University SLO</p>
+    <nav>
+      <a href="/about.html">About Me</a>
+      <a href="/contact.html">Contact Info</a>
+      <a href="/resume.html">Resume</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/organizations.html">Organizations</a>
+      <a href="/certifications.html">Certifications</a>
+    </nav>
   </header>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <div class="card section-card">
-        <h2>About Me</h2>
-        <p class="lead">
-          Add a longer intro here. Mention your background, interests, and what you’re currently working on.
-        </p>
-        <div class="pillrow">
-          <span class="pill">JavaScript</span>
-          <span class="pill">HTML/CSS</span>
-          <span class="pill">Python</span>
-          <span class="pill">Your Skill</span>
-        </div>
-      </div>
+  <main>
+    <div class="card">
+      <h2>About Me</h2>
+      <p><a href="/about.html">Open page →</a></p>
     </div>
-  </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <div class="container">
-      <div class="card section-card">
-        <h2>Projects</h2>
-        <p class="lead">A few things I’ve built. Replace these cards with your real projects.</p>
-
-        <div class="projects">
-          <article class="project">
-            <h3>Project One</h3>
-            <p>1–2 sentences: what it does, why you built it, and the main outcome.</p>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JS</span>
-            </div>
-            <div class="links">
-              <a class="link" href="#" target="_blank" rel="noopener">Live Demo</a>
-              <a class="link" href="#" target="_blank" rel="noopener">Source Code</a>
-            </div>
-          </article>
-
-          <article class="project">
-            <h3>Project Two</h3>
-            <p>1–2 sentences describing the project and what you learned.</p>
-            <div class="tags">
-              <span class="tag">React</span>
-              <span class="tag">API</span>
-            </div>
-            <div class="links">
-              <a class="link" href="#" target="_blank" rel="noopener">Live Demo</a>
-              <a class="link" href="#" target="_blank" rel="noopener">Source Code</a>
-            </div>
-          </article>
-
-          <article class="project">
-            <h3>Project Three</h3>
-            <p>1–2 sentences describing the project and the impact/result.</p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Data</span>
-            </div>
-            <div class="links">
-              <a class="link" href="#" target="_blank" rel="noopener">Writeup</a>
-              <a class="link" href="#" target="_blank" rel="noopener">Source Code</a>
-            </div>
-          </article>
-        </div>
-      </div>
+    <div class="card">
+      <h2>Contact Info</h2>
+      <p><a href="/contact.html">Open page →</a></p>
     </div>
-  </section>
 
-  <!-- Resume -->
-  <section id="resume">
-    <div class="container">
-      <div class="card section-card">
-        <h2>Resume</h2>
-        <p class="lead">Put your experience and education here (or link a PDF).</p>
-
-        <div class="resume-grid">
-          <div class="item">
-            <div class="title">
-              <h3>Job / Internship Title</h3>
-              <small>2025 – 2026</small>
-            </div>
-            <small class="muted">Company • Location</small>
-            <p>
-              • Bullet what you did<br />
-              • Use numbers if possible (ex: improved X by 20%)<br />
-              • Tools/skills used
-            </p>
-          </div>
-
-          <div class="item">
-            <div class="title">
-              <h3>School / Program</h3>
-              <small>2024 – 2028</small>
-            </div>
-            <small class="muted">Degree • Focus</small>
-            <p>
-              Relevant coursework, achievements, clubs, or awards.
-            </p>
-          </div>
-        </div>
-
-        <div style="margin-top:12px;">
-          <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
-          <span style="color: var(--muted); font-size:12px; margin-left:8px;">
-            (Upload <strong>resume.pdf</strong> to your repo for this to work)
-          </span>
-        </div>
-      </div>
+    <div class="card">
+      <h2>Resume</h2>
+      <p><a href="/resume.html">Open page →</a></p>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="card section-card">
-        <h2>Contact</h2>
-        <p class="lead">Best ways to reach me.</p>
-
-        <div class="contact-grid">
-          <div class="contact-list">
-            <div class="contact-row">
-              <strong>Email</strong>
-              <a href="mailto:you@email.com">you@email.com</a>
-            </div>
-            <div class="contact-row">
-              <strong>LinkedIn</strong>
-              <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener">linkedin.com/in/yourusername</a>
-            </div>
-            <div class="contact-row">
-              <strong>GitHub</strong>
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <h3 style="margin:0 0 8px;">Quick Note</h3>
-            <p style="margin:0; color: var(--muted); font-size:13px;">
-              Write a short message like: “I’m open to internships, collaborations, and freelance work.”
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <footer class="container">
-        © <span id="year"></span> Your Name • Built with HTML/CSS • Hosted on GitHub Pages
-      </footer>
+    <div class="card">
+      <h2>Projects</h2>
+      <p><a href="/projects.html">Open page →</a></p>
     </div>
-  </section>
 
-  <script>
-    // Update footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    <div class="card">
+      <h2>Organizations</h2>
+      <p><a href="/organizations.html">Open page →</a></p>
+    </div>
 
-    // Active tab highlight on scroll
-    const sections = ["about","projects","resume","contact"].map(id => document.getElementById(id));
-    const tabs = Array.from(document.querySelectorAll(".tab"));
+    <div class="card">
+      <h2>Certifications</h2>
+      <p><a href="/certifications.html">Open page →</a></p>
+    </div>
+  </main>
 
-    function setActiveTab() {
-      const scrollY = window.scrollY + 110; // offset for sticky nav
-      let activeId = "about";
-
-      for (const sec of sections) {
-        if (sec.offsetTop <= scrollY) activeId = sec.id;
-      }
-
-      tabs.forEach(t => {
-        const href = (t.getAttribute("href") || "").replace("#","");
-        t.classList.toggle("active", href === activeId);
-      });
-    }
-
-    window.addEventListener("scroll", setActiveTab, { passive: true });
-    setActiveTab();
-  </script>
+  <footer>© <span id="y"></span> Charles</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
-
-
-
-
