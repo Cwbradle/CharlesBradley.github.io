@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Charles Bradley</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -35,37 +37,30 @@
       font-size: 4em;
       line-height: 1.1;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-      font-family: 'Inter', sans-serif;
     }
 
     header p {
-      margin: 6px 0 14px 0;
-      font-size: 1.35em;
+      margin: 2px 0 8px 0;
+      font-size: 1.5em;
       font-weight: 300;
       line-height: 1.2;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-      font-family: 'Inter', sans-serif;
     }
 
     nav {
       margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 18px;
     }
 
     nav a {
+      margin: 0 12px;
       color: white;
       font-weight: bold;
       text-decoration: none;
-      font-size: 1.05em;
-      padding: 8px 12px;
+      font-size: 1.2em;
+      padding: 6px 12px;
       border: 2px solid transparent;
-      border-radius: 6px;
+      border-radius: 4px;
       transition: all 0.2s ease;
-      font-family: 'Inter', sans-serif;
     }
 
     nav a:hover {
@@ -73,49 +68,125 @@
       background-color: rgba(255, 255, 255, 0.1);
     }
 
-    main {
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 40px 18px 60px;
-    }
-
     .card {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 10px;
-      padding: 18px;
-      margin: 16px 0;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      background-color: #84848E;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 40px auto;
+      max-width: 900px;
     }
 
     .card h2 {
-      margin: 0 0 10px 0;
       font-family: 'Inter', sans-serif;
-      font-size: 1.35em;
+      border-bottom: 2px solid #31323D;
       padding-bottom: 8px;
-      border-bottom: 2px solid rgba(255,255,255,0.18);
-      text-decoration: underline;
-      font-weight: 800;
-    }
-
-    .card p {
-      margin: 0;
-      color: rgba(255,255,255,0.92);
-      font-family: 'Inter', sans-serif;
+      margin-bottom: 16px;
     }
 
     .card a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: normal;
+    }
+
+    .card p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1em;
+      color: white;
+      line-height: 1.6;
+    }
+
+    #about {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    #about h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.2em;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    #about p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: white;
+    }
+
+    #contact {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.2em;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+      margin-bottom: 30px;
+      border: none;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact-img {
+      width: 200px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+      padding: 20px 24px;
+      color: white;
+      text-align: left;
+      flex: 1;
+      min-width: 260px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: background 0.25s ease;
+      height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-card p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin: 6px 0;
+    }
+
+    #contact a {
       color: #aeb3cc;
       text-decoration: none;
-      font-weight: 700;
     }
-    .card a:hover { color: #0a66c2; }
 
-    footer {
-      text-align: center;
-      padding: 22px 10px;
-      color: rgba(255,255,255,0.75);
-      font-family: 'Inter', sans-serif;
+    #contact a:hover {
+      color: #0a66c2;
     }
   </style>
 </head>
@@ -124,49 +195,41 @@
   <header>
     <h1>Charles Bradley</h1>
     <p>Mechanical Engineering Student at California Polytechnic University SLO</p>
+
+    <!-- Order: About Me, Resume, Projects, Organizations, Certifications, Contact Info -->
     <nav>
-      <a href="/about.html">About Me</a>
-      <a href="/contact.html">Contact Info</a>
+      <a href="#about">About Me</a>
       <a href="/resume.html">Resume</a>
       <a href="/projects.html">Projects</a>
       <a href="/organizations.html">Organizations</a>
       <a href="/certifications.html">Certifications</a>
+      <a href="#contact">Contact Info</a>
     </nav>
   </header>
 
-  <main>
-    <div class="card">
-      <h2><b>About Me</b></h2>
-      <p><a href="/about.html">Open page →</a></p>
-    </div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Mechanical Engineering student skilled in analytical thinking and hands-on prototyping. Expertise in 3D modeling,
+      testing apparatuses, and driving waste reduction efforts with successful cost-saving implementations. Proven ability
+      to lead teams, communicate effectively, and pay attention to detail.
+    </p>
+  </section>
 
-    <div class="card">
-      <h2><b>Contact Info</b></h2>
-      <p><a href="/contact.html">Open page →</a></p>
-    </div>
+  <section id="contact">
+    <h2>Contact Info</h2>
+    <div class="contact-wrapper">
+      <img src="images/me.jpeg" alt="Charles Bradley" class="contact-img">
 
-    <div class="card">
-      <h2><b>Resume</b></h2>
-      <p><a href="/resume.html">Open page →</a></p>
+      <div class="contact-card">
+        <p>Phone Number: <a href="tel:2628257432">(262) 825-7432</a></p>
+        <p>Email: <a href="mailto:cwbradle@calpoly.edu">cwbradle@calpoly.edu</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/charles-bradley">www.linkedin.com/in/charles-bradley</a></p>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h2><b>Projects</b></h2>
-      <p><a href="/projects.html">Open page →</a></p>
-    </div>
-
-    <div class="card">
-      <h2><b>Organizations</b></h2>
-      <p><a href="/organizations.html">Open page →</a></p>
-    </div>
-
-    <div class="card">
-      <h2><b>Certifications</b></h2>
-      <p><a href="/certifications.html">Open page →</a></p>
-    </div>
-  </main>
-
-  <footer>© <span id="y"></span> Charles</footer>
+  <footer>© <span id="y"></span> Charles Bradley</footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
