@@ -24,11 +24,11 @@
       color: white;
     }
 
-    /* ✅ HERO (replaces old header background-image method) */
+    /* HERO */
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh;           /* full screen like before */
+      height: 82vh;            /* was 100vh */
       min-height: 600px;
       overflow: hidden;
 
@@ -51,38 +51,55 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.18); /* slightly lighter */
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 0 16px;
+      padding: 24px 36px;
+
+      /* frosted glass behind the text */
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 10px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      max-width: 950px;
+      margin: 0 16px;
     }
 
     .hero h1 {
       margin: 0;
-      font-size: 4em;
+      font-size: 3.5em;        /* was 4em */
       line-height: 1.1;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
 
     .hero p {
-      margin: 2px 0 8px 0;
-      font-size: 1.5em;
+      margin: 6px 0 0 0;
+      font-size: 1.3em;        /* was 1.5em */
       font-weight: 300;
       line-height: 1.2;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
 
-    nav { margin-top: 10px; }
+    .hero-tagline {
+      font-size: 1.05em;
+      opacity: 0.92;
+      margin-top: 8px;
+      margin-bottom: 6px;
+    }
+
+    nav { margin-top: 14px; }
 
     nav a {
       margin: 0 12px;
       color: white;
       font-weight: bold;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.15em;
       padding: 6px 12px;
       border: 2px solid transparent;
       border-radius: 4px;
@@ -92,6 +109,12 @@
     nav a:hover {
       border: 2px solid white;
       background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Emphasize Projects subtly */
+    nav a:nth-child(3) {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+      padding-bottom: 4px;
     }
 
     #about {
@@ -196,6 +219,7 @@
     <div class="hero-content">
       <h1>Charles Bradley</h1>
       <p>Mechanical Engineering Student at California Polytechnic University SLO</p>
+      <div class="hero-tagline">Interested in mechanical design, mechatronics, and hands-on engineering projects</div>
 
       <nav>
         <a href="#about">About Me</a>
