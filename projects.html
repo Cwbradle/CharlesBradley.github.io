@@ -21,16 +21,9 @@
       backdrop-filter: blur(6px);
       transition: all 0.25s ease;
     }
+    .home-button:hover { background: rgba(255, 255, 255, 0.2); }
 
-    .home-button:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    body {
-      margin: 0;
-      font: 16px/1.6 system-ui, sans-serif;
-      background-color: #31323D;
-    }
+    body { margin: 0; font: 16px/1.6 system-ui, sans-serif; background-color: #31323D; }
 
     .projects-header {
       width: 100%;
@@ -41,7 +34,6 @@
       justify-content: center;
       align-items: center;
     }
-
     .projects-header h1 {
       margin: 0;
       font-size: 3.4em;
@@ -61,15 +53,6 @@
       max-width: 900px;
     }
 
-    .card h2 {
-      margin-top: 0;
-    }
-
-    .card p,
-    .card li {
-      color: white;
-    }
-
     .card-divider {
       width: 100%;
       height: 2px;
@@ -80,6 +63,7 @@
 
     .card-img {
       width: 300px;
+      height: auto;
       border-radius: 8px;
       margin: 12px auto;
       display: block;
@@ -88,6 +72,7 @@
 
     .card-img2 {
       width: 300px;
+      height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
@@ -100,10 +85,7 @@
       flex-wrap: wrap;
     }
 
-    .pdf-link {
-      margin-top: 18px;
-    }
-
+    .pdf-link { margin-top: 18px; }
     .pdf-link a {
       display: inline-block;
       padding: 6px 14px;
@@ -117,19 +99,10 @@
       backdrop-filter: blur(5px);
       transition: all 0.25s ease;
     }
+    .pdf-link a:hover { background: rgba(255, 255, 255, 0.2); transform: scale(1.03); }
 
-    .pdf-link a:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: scale(1.03);
-    }
-
-    .section {
-      margin-bottom: 36px;
-    }
-
-    .section:last-child {
-      margin-bottom: 0;
-    }
+    .section { margin-bottom: 36px; }
+    .section:last-child { margin-bottom: 0; }
   </style>
 </head>
 
@@ -140,48 +113,46 @@
 
   <section class="card">
 
-    <!-- TARS PROJECT -->
     <div class="section">
       <h2>TARS | Sigma Phi Delta (Jan 2026 – Present)</h2>
       <div class="card-divider"></div>
       <ul>
         <li>Developing a proof-of-concept robot modeled after TARS capable of autonomous locomotion.</li>
         <li>Decoding simple voice commands (“Move forward,” “Turn right,” “Turn left,” “Stop”) into predetermined servo positions.</li>
-        <li>Focusing on seamless integration of mechanical design and embedded systems for smooth motion.</li>
-        <li>Designed as a foundation for future mechatronics projects, with plans for vision-based automation, asynchronous control, and AI.</li>
+        <li>Focusing on seamless integration of mechanical design and embedded systems to achieve smooth motion.</li>
+        <li>Designed as a base for future mechatronics projects with long-term goals of vision-based automation, asynchronous control, and AI.</li>
       </ul>
 
-      <img src="images/tars.png" alt="TARS Robot" class="card-img">
+      <img src="images/pars.png" alt="TARS Project" class="card-img">
 
       <div class="pdf-link">
         <a href="tarspdr.pdf" target="_blank">View Project Design Report (PDF)</a>
       </div>
     </div>
 
-    <!-- RC CARS PROJECT -->
     <div class="section">
       <h2>RC Cars | Sigma Phi Delta (Jan 2026 – Present)</h2>
       <div class="card-divider"></div>
       <ul>
-        <li>Collaborated with alumni to design and build a fully 3D-printed RC car under a $250 budget.</li>
-        <li>Worked on mechanical design and electrical integration to ensure system compatibility.</li>
+        <li>Collaborated with alumni to design and build a fully 3D-printed RC car under a $250 budget, competing in a multi-team race.</li>
+        <li>Worked on mechanical design and electrical integration to ensure seamless integration.</li>
         <li>Designed and modeled the steering rack assembly in SolidWorks.</li>
       </ul>
 
       <div class="image-row">
-        <img src="images/rccars1.png" alt="RC Car Design" class="card-img2">
-        <img src="images/rccars2.png" alt="RC Car Assembly" class="card-img2">
+        <img src="images/rccars1.png" alt="RC Car 1" class="card-img2">
+        <img src="images/rccars2.png" alt="RC Car 2" class="card-img2">
       </div>
     </div>
 
-    <!-- MILWAUKEE TOOL -->
     <div class="section">
       <h2>High Altitude Testing | Milwaukee Tool (Jan 2023 – Apr 2023)</h2>
       <div class="card-divider"></div>
       <ul>
-        <li>Designed and prototyped a vacuum chamber capable of simulating altitudes up to 29,500 ft.</li>
-        <li>Performed analytical calculations for vacuum pump sizing, pressure differentials, material strength, and safety factors.</li>
+        <li>Designed and prototyped a vacuum chamber capable of simulating altitudes up to 29,500 ft for in-house testing.</li>
+        <li>Performed calculations for vacuum pump sizing, pressure differentials, material strength, and factors of safety.</li>
         <li>Developed proof-of-concept and detailed CAD models using Autodesk Inventor.</li>
+        <li>Created chamber, base structure, and component interfaces to guide next-phase development and documentation.</li>
       </ul>
 
       <img src="images/milwaukeetool.png" alt="Milwaukee Tool Project" class="card-img">
@@ -191,18 +162,18 @@
       </div>
     </div>
 
-    <!-- ABB -->
     <div class="section">
       <h2>Waste Reduction | Asea Brown Boveri (ABB) (Sept 2022 – Dec 2022)</h2>
       <div class="card-divider"></div>
       <ul>
-        <li>Researched cost-effective strategies to reduce waste from label backing, paper towels, and packaging materials.</li>
+        <li>Researched cost-effective methods to reduce waste from label backing, paper towels, and packaging materials.</li>
         <li>Collaborated with industry professionals to evaluate environmental and financial impact.</li>
-        <li>Presented findings to ABB’s environmental team, outlining next steps for implementation.</li>
-        <li>Proposed solutions saving approximately $20,000 annually while reducing carbon footprint.</li>
+        <li>Communicated findings using Microsoft Word, Excel, PowerPoint, and Teams.</li>
+        <li>Presented results to ABB’s environmental team and outlined implementation next steps.</li>
+        <li>Proposed solutions saving ~ $20,000 annually while reducing carbon footprint.</li>
       </ul>
 
-      <img src="images/abb.JPG" alt="ABB Waste Reduction Project" class="card-img">
+      <img src="images/abb.JPG" alt="ABB Waste Reduction" class="card-img">
     </div>
 
   </section>
