@@ -28,7 +28,7 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 82vh;            /* was 100vh */
+      height: 82vh;            /* slightly less than full screen */
       min-height: 600px;
       overflow: hidden;
 
@@ -48,48 +48,49 @@
       object-position: center top;
     }
 
+    /* subtle gradient behind text (no frosted glass box) */
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.18); /* slightly lighter */
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35) 0%,
+        rgba(0,0,0,0.25) 40%,
+        rgba(0,0,0,0.15) 100%
+      );
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 24px 36px;
-
-      /* frosted glass behind the text */
-      background: rgba(0, 0, 0, 0.35);
-      border-radius: 10px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      padding: 0 16px;
       max-width: 950px;
-      margin: 0 16px;
     }
 
     .hero h1 {
       margin: 0;
-      font-size: 3.5em;        /* was 4em */
+      font-size: 3.5em;
       line-height: 1.1;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      font-weight: 600;
+      text-shadow:
+        0 4px 12px rgba(0,0,0,0.9),
+        0 1px 2px rgba(0,0,0,0.8);
     }
 
     .hero p {
       margin: 6px 0 0 0;
-      font-size: 1.3em;        /* was 1.5em */
-      font-weight: 300;
+      font-size: 1.3em;
+      font-weight: 400;
       line-height: 1.2;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      text-shadow: 0 3px 10px rgba(0,0,0,0.85);
     }
 
     .hero-tagline {
       font-size: 1.05em;
-      opacity: 0.92;
+      opacity: 0.95;
       margin-top: 8px;
       margin-bottom: 6px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.85);
     }
 
     nav { margin-top: 14px; }
@@ -104,6 +105,7 @@
       border: 2px solid transparent;
       border-radius: 4px;
       transition: all 0.2s ease;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8); /* helps nav pop */
     }
 
     nav a:hover {
