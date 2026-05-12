@@ -4,8 +4,6 @@
   <meta charset="utf-8" />
   <title>Organizations - Charles Bradley</title>
 
-  <a href="index.html" class="home-button">← Home</a>
-
   <style>
     .home-button {
       display: inline-block;
@@ -21,9 +19,16 @@
       backdrop-filter: blur(6px);
       transition: all 0.25s ease;
     }
-    .home-button:hover { background: rgba(255, 255, 255, 0.2); }
 
-    body { margin: 0; font: 16px/1.6 system-ui, sans-serif; background-color: #31323D; }
+    .home-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, sans-serif;
+      background-color: #31323D;
+    }
 
     .org-header {
       width: 100%;
@@ -33,7 +38,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      box-sizing: border-box;
     }
+
     .org-header h1 {
       margin: 0;
       font-size: 3.4em;
@@ -51,6 +58,7 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       margin: 40px auto;
       max-width: 900px;
+      box-sizing: border-box;
     }
 
     .card-divider {
@@ -61,14 +69,24 @@
       border-radius: 2px;
     }
 
-    .card p, .card li { color: white; }
+    .card p,
+    .card li {
+      color: white;
+    }
 
-    .section { margin-bottom: 36px; }
-    .section:last-child { margin-bottom: 0; }
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
 <body>
+  <a href="index.html" class="home-button">← Home</a>
+
   <header class="org-header">
     <h1>Organizations</h1>
   </header>
@@ -79,6 +97,10 @@
       <h2>Sigma Phi Delta (Oct 2024 – Present)</h2>
       <div class="card-divider"></div>
       <p>Professional Engineering Fraternity</p>
+      <ul>
+        <li>Professional Project Committee Chair (May 2026 – Present).</li>
+        <li>Professional Events Planner (May 2026 – Present).</li>
+      </ul>
     </div>
 
     <div class="section">
