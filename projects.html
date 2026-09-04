@@ -4,8 +4,6 @@
   <meta charset="utf-8" />
   <title>Projects - Charles Bradley</title>
 
-  <a href="index.html" class="home-button">← Home</a>
-
   <style>
     .home-button {
       display: inline-block;
@@ -40,6 +38,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      box-sizing: border-box;
     }
 
     .projects-header h1 {
@@ -59,6 +58,7 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       margin: 40px auto;
       max-width: 900px;
+      box-sizing: border-box;
     }
 
     .card-divider {
@@ -132,11 +132,34 @@
 </head>
 
 <body>
+  <a href="index.html" class="home-button">← Home</a>
+
   <header class="projects-header">
     <h1>Projects</h1>
   </header>
 
   <section class="card">
+
+    <div class="section">
+      <h2>Low-Cost GNSS Tide Gauge Research | California Polytechnic State University (Sep 2026 – Present)</h2>
+      <div class="card-divider"></div>
+
+      <ul>
+        <li>
+          Developing a MATLAB script to calculate calibration constants for an
+          uncalibrated sensor using synchronized data points from a calibrated
+          reference gauge.
+        </li>
+        <li>
+          Installed and deployed radar-based water level gauges in Morro Bay to
+          support coastal water-level monitoring.
+        </li>
+        <li>
+          Contributing to the development of low-cost tide gauges designed to
+          expand sea-level monitoring among currently unmonitored locations.
+        </li>
+      </ul>
+    </div>
 
     <div class="section">
       <h2>3D-Printed Fixed-Wing Aircraft | Sigma Phi Delta (Aug 2026 – Present)</h2>
